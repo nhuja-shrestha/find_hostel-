@@ -1,0 +1,9 @@
+@import url('../../css/theme.css');
+
+/* Simple login page using shared theme */
+.login-wrap{max-width:920px;margin:40px auto;display:grid;grid-template-columns:1fr 420px;gap:30px;align-items:center}
+.auth-card{padding:28px}
+.auth-card .title{font-size:22px;margin-bottom:10px}
+
+@media (max-width:900px){.login-wrap{grid-template-columns:1fr}}
+

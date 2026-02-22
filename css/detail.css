@@ -1,0 +1,275 @@
+/* =====================================
+   VIEW DETAIL PAGE - PREMIUM DARK THEME
+   Professional color palette for premium look
+===================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --gradient-main: linear-gradient(135deg, #1e3a5f, #0f172a);
+    --gradient-card: linear-gradient(135deg, rgba(30, 58, 95, 0.9), rgba(15, 23, 42, 0.95));
+    --primary: #3b82f6;
+    --primary-dark: #2563eb;
+    --primary-light: #60a5fa;
+    --accent: #06b6d4;
+    --text-dark: #e2e8f0;
+    --text-light: #94a3b8;
+    --glass-border: rgba(59, 130, 246, 0.3);
+    --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.4);
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
+    --transition: all 0.35s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--gradient-main);
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: var(--text-dark);
+    padding: 30px 20px;
+}
+
+/* =====================================
+   CONTAINER
+===================================== */
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* =====================================
+   CARD
+===================================== */
+.card {
+    background: var(--gradient-card);
+    backdrop-filter: blur(18px);
+    border-radius: var(--radius-lg);
+    padding: 35px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-soft);
+}
+
+.card h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-light);
+    margin-bottom: 8px;
+}
+
+/* =====================================
+   GALLERY
+===================================== */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.gallery img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    box-shadow: var(--shadow-soft);
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-hover);
+}
+
+/* =====================================
+   SECTIONS
+===================================== */
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-light);
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* =====================================
+   BADGES
+===================================== */
+.badge {
+    display: inline-block;
+    padding: 8px 14px;
+    margin: 4px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(6, 182, 212, 0.2));
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 50px;
+    font-size: 12px;
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+.badge:hover {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* =====================================
+   DESCRIPTION
+===================================== */
+.description-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-dark);
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: var(--radius-md);
+}
+
+/* =====================================
+   INQUIRY SECTION
+===================================== */
+.inquiry-section {
+    margin-top: 30px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--glass-border);
+}
+
+.inquiry-section h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary-light);
+    margin-bottom: 20px;
+}
+
+/* =====================================
+   ALERTS
+===================================== */
+.alert-success {
+    padding: 14px 18px;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.2));
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: var(--radius-md);
+    color: #34d399;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.alert-error {
+    padding: 14px 18px;
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(220, 38, 38, 0.2));
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: var(--radius-md);
+    color: #f87171;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* =====================================
+   FORM
+===================================== */
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid rgba(59, 130, 246, 0.2);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    transition: var(--transition);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-dark);
+    resize: vertical;
+    min-height: 100px;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+textarea::placeholder {
+    color: var(--text-light);
+}
+
+/* =====================================
+   BUTTONS
+===================================== */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--primary-light);
+    border: 2px solid var(--primary);
+}
+
+.btn.secondary:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+    
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .gallery img {
+        height: 120px;
+    }
+    
+    .btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}

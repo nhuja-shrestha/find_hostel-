@@ -1,0 +1,59 @@
+/* ========================================
+   PREMIUM PURPLE-BLUE THEME
+   ======================================== */
+
+:root {
+
+    /* ========= BRAND COLORS ========= */
+    --primary: #6C63FF;
+    --primary-dark: #5B21B6;
+    --accent: #8B5CF6;
+
+    /* ========= GRADIENTS ========= */
+    --gradient-primary: linear-gradient(135deg, #6C63FF, #8B5CF6);
+    --gradient-top: linear-gradient(135deg, #5B21B6, #3B82F6);
+
+    /* ========= BACKGROUNDS ========= */
+    --bg-main: #f4f6ff;
+    --bg-soft: #eef2ff;
+    --card-bg: rgba(255, 255, 255, 0.95);
+
+    /* ========= TEXT ========= */
+    --text-dark: #1e1b4b;
+    --text-medium: #4b5563;
+    --text-light: #9ca3af;
+
+    /* ========= SHADOWS ========= */
+    --shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 12px 28px rgba(0, 0, 0, 0.1);
+    --shadow-strong: 0 18px 40px rgba(0, 0, 0, 0.15);
+    --shadow-glow: 0 0 20px rgba(108, 99, 255, 0.4);
+
+    /* ========= UI ========= */
+    --radius-lg: 16px;
+    --transition: 0.3s ease;
+}
+
+/* ========= GLOBAL RESET ========= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-main);
+    color: var(--text-dark);
+}
+.link {
+    text-decoration: none;
+    color: #6C63FF;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.link:hover {
+    color: #5B21B6;
+}

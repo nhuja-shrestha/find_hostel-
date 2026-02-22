@@ -1,0 +1,340 @@
+/* =====================================
+   OWNER DASHBOARD - PREMIUM DARK THEME
+   Professional color palette for premium look
+===================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --gradient-main: linear-gradient(135deg, #1e3a5f, #0f172a);
+    --gradient-card: linear-gradient(135deg, rgba(30, 58, 95, 0.9), rgba(15, 23, 42, 0.95));
+    --primary: #3b82f6;
+    --primary-dark: #2563eb;
+    --primary-light: #60a5fa;
+    --accent: #06b6d4;
+    --text-dark: #e2e8f0;
+    --text-light: #94a3b8;
+    --muted: #64748b;
+    --glass-border: rgba(59, 130, 246, 0.3);
+    --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.4);
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
+    --transition: all 0.35s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--gradient-main);
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: var(--text-dark);
+    padding: 30px 20px;
+}
+
+/* =====================================
+   CONTAINER
+===================================== */
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    padding: 25px 30px;
+    background: var(--gradient-card);
+    backdrop-filter: blur(18px);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-soft);
+}
+
+header h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 5px;
+}
+
+header .muted {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* =====================================
+   STAT GRID
+===================================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: var(--gradient-card);
+    backdrop-filter: blur(18px);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card .muted {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+/* Quick Links in Card */
+.card .link {
+    display: inline-block;
+    color: var(--primary-light);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    transition: var(--transition);
+}
+
+.card .link:hover {
+    color: var(--accent);
+    transform: translateX(3px);
+}
+
+/* =====================================
+   SECTION TITLES
+===================================== */
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* =====================================
+   HOSTEL LIST
+===================================== */
+.hostel-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hostel-item {
+    background: var(--gradient-card);
+    backdrop-filter: blur(18px);
+    border-radius: var(--radius-lg);
+    padding: 22px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+}
+
+.hostel-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.hostel-item .thumb {
+    width: 140px;
+    height: 100px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hostel-item .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hostel-meta h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+}
+
+.hostel-meta p {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+.hostel-meta .desc {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.hostel-meta .small {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.hostel-meta .small strong {
+    color: var(--primary-light);
+}
+
+/* =====================================
+   INQUIRY ITEMS
+===================================== */
+.inq-item {
+    background: var(--gradient-card);
+    backdrop-filter: blur(18px);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+}
+
+.inq-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.inq-item strong {
+    color: var(--primary-light);
+}
+
+.inq-item .muted {
+    font-size: 12px;
+    color: var(--muted);
+    display: block;
+    margin: 8px 0;
+}
+
+.inq-item p {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.inq-item .link {
+    display: inline-block;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.inq-item .link:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+}
+
+/* =====================================
+   LOGOUT LINK
+===================================== */
+.link {
+    color: var(--primary-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.link:hover {
+    color: var(--accent);
+}
+
+/* =====================================
+   EMPTY STATES
+===================================== */
+.card.empty {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-light);
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hostel-item > div {
+        flex-direction: column;
+    }
+    
+    .hostel-item .thumb {
+        width: 100%;
+        height: 150px;
+        margin-bottom: 15px;
+    }
+}

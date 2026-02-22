@@ -1,0 +1,434 @@
+/* ========================================
+   CONTACT PAGE - MODERN PURPLE-BLUE THEME
+   Glassmorphism with Premium Design
+   ======================================== */
+@import url('../../css/theme.css');
+
+/* ========================================
+   GLOBAL
+   ======================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg-main);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+}
+
+/* ========================================
+   NAVBAR — identical to dashboard
+   ======================================== */
+.navbar {
+    backdrop-filter: blur(14px);
+    background: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--text-medium);
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: var(--transition);
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary);
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.auth-buttons a {
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-login {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+.btn-login:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+.btn-signup {
+    background: var(--gradient-primary);
+    color: #fff;
+    border: none;
+    box-shadow: var(--shadow-soft);
+}
+
+.btn-signup:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* ========================================
+   HERO — identical to dashboard
+   ======================================== */
+.hero {
+    background: var(--gradient-top);
+    text-align: center;
+    padding: 100px 20px 70px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+    animation: heroShine 20s ease-in-out infinite;
+}
+
+@keyframes heroShine {
+    0%, 100% { transform: translate(0, 0); }
+    50%       { transform: translate(15%, 15%); }
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero p {
+    font-size: 16px;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   MAIN CONTAINER
+   ======================================== */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+/* ========================================
+   TWO-COLUMN LAYOUT
+   ======================================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: start;
+}
+
+/* ========================================
+   SHARED CARD BASE — glassmorphism
+   ======================================== */
+.contact-form-card,
+.contact-info-card,
+.faq-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(18px);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-soft);
+    padding: 36px;
+    transition: var(--transition-smooth);
+}
+
+.contact-form-card:hover,
+.contact-info-card:hover,
+.faq-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-strong);
+}
+
+.contact-info-card {
+    margin-bottom: 28px;
+}
+
+.contact-form-card h2,
+.contact-info-card h2,
+.faq-card h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 24px;
+}
+
+/* ========================================
+   ALERTS
+   ======================================== */
+.alert-success {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #16a34a;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.alert-error {
+    background: #fff0f0;
+    border: 1px solid #fcc;
+    color: #c33;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* ========================================
+   FORM ELEMENTS
+   ======================================== */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.form-group label span {
+    color: #e74c3c;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid var(--glass-border);
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text-dark);
+    transition: var(--transition);
+    outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-light);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb, 4, 98, 161), 0.08);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+/* Submit Button */
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 50px;
+    background: var(--gradient-primary);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-soft);
+    letter-spacing: 0.3px;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* ========================================
+   CONTACT INFO ITEMS
+   ======================================== */
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.info-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.info-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.info-text strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 3px;
+}
+
+.info-text span {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+/* ========================================
+   FAQ ITEMS
+   ======================================== */
+.faq-item {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.faq-item strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+}
+
+.faq-item p {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ========================================
+   FOOTER — identical to dashboard
+   ======================================== */
+.footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--gradient-top);
+    color: #fff;
+    font-size: 14px;
+    margin-top: 60px;
+}
+
+.footer p {
+    margin: 4px 0;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-card,
+    .contact-info-card,
+    .faq-card {
+        padding: 24px 20px;
+    }
+
+    .contact-form-card:hover,
+    .contact-info-card:hover,
+    .faq-card:hover {
+        transform: none;
+    }
+}

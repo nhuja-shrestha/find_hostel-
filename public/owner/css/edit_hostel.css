@@ -1,0 +1,88 @@
+/* ===== FORM STYLING ===== */
+.box {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.box h2 {
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+.box label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.box input[type="text"],
+.box input[type="number"],
+.box select,
+.box textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.box textarea {
+    min-height: 80px;
+}
+
+.btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery div {
+    position: relative;
+}
+
+.gallery img {
+    width: 200px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.gallery a {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background: rgba(255,0,0,0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    text-decoration: none;
+}

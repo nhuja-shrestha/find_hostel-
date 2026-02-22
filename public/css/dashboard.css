@@ -1,0 +1,437 @@
+/* ========================================
+   PUBLIC DASHBOARD - MODERN PURPLE-BLUE THEME
+   Glassmorphism with Premium Design
+   ======================================== */
+@import url('../../css/theme.css');
+
+/* ========================================
+   GLOBAL OVERRIDES
+   ======================================== */
+body {
+    background: var(--bg-main);
+}
+
+/* ========================================
+   NAVBAR (GLASS EFFECT)
+   ======================================== */
+.navbar {
+    backdrop-filter: blur(14px);
+    background: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--text-medium);
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: var(--transition);
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary);
+}
+
+/* Auth Buttons */
+.auth-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.auth-buttons a {
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-login {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+.btn-login:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+.btn-signup {
+    background: var(--gradient-primary);
+    color: #fff;
+    border: none;
+    box-shadow: var(--shadow-soft);
+}
+
+.btn-signup:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+.hero {
+    background: var(--gradient-top);
+    text-align: center;
+    padding: 100px 20px 70px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+    animation: heroShine 20s ease-in-out infinite;
+}
+
+@keyframes heroShine {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(15%, 15%); }
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 35px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Search Box */
+.search-box {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    background: #fff;
+    border-radius: 50px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-strong);
+    position: relative;
+    z-index: 1;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 16px 24px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 15px;
+    color: var(--text-dark);
+    font-family: 'Poppins', sans-serif;
+}
+
+.search-box input::placeholder {
+    color: var(--text-light);
+}
+
+.search-box button {
+    padding: 16px 28px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    background: var(--gradient-primary);
+    color: #fff;
+    transition: var(--transition);
+}
+
+.search-box button:hover {
+    box-shadow: var(--shadow-glow);
+}
+
+/* ========================================
+   MAIN CONTAINER
+   ======================================== */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.section-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+/* ========================================
+   HOSTEL GRID
+   ======================================== */
+.hostel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+}
+
+/* ========================================
+   HOSTEL CARD DESIGN
+   ======================================== */
+.hostel-box {
+    background: var(--card-bg);
+    backdrop-filter: blur(18px);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+}
+
+.hostel-box:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-strong);
+}
+
+/* Image */
+.hostel-image {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hostel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.hostel-box:hover .hostel-image img {
+    transform: scale(1.08);
+}
+
+/* Featured Badge - Warm Yellow */
+.hostel-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, var(--badge-featured), var(--badge-featured-light));
+    color: var(--badge-text);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+/* Content */
+.hostel-content {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.hostel-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.hostel-location {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Amenities */
+.hostel-amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.amenity {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 30px;
+    background: var(--bg-soft);
+    color: var(--text-medium);
+    border: 1px solid var(--glass-border);
+}
+
+/* Footer */
+.hostel-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.hostel-price {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--primary);
+}
+
+.hostel-price span {
+    font-size: 12px;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+.btn-view {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: var(--gradient-primary);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-view:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+}
+
+/* ========================================
+   NO HOSTELS STATE
+   ======================================== */
+.no-hostels {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-soft);
+}
+
+.no-hostels h3 {
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.no-hostels p {
+    color: var(--text-light);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--gradient-top);
+    color: #fff;
+    font-size: 14px;
+    margin-top: 60px;
+}
+
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .search-box {
+        flex-direction: column;
+        border-radius: var(--radius-lg);
+    }
+
+    .search-box input,
+    .search-box button {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .search-box button {
+        padding: 14px;
+    }
+
+    .hostel-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hostel-grid {
+        grid-template-columns: 1fr;
+    }
+}

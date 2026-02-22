@@ -1,0 +1,443 @@
+/* ========================================
+   OWNER DASHBOARD - MANAGE HOSTELS
+   Matches Public Dashboard Glass Theme
+   ======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ========================================
+   CSS VARIABLES (mirrors theme.css)
+   ======================================== */
+:root {
+    --primary: #6c47ff;
+    --accent: #a78bfa;
+    --gradient-primary: linear-gradient(135deg, #6c47ff, #a78bfa);
+    --gradient-top: linear-gradient(135deg, #6c47ff 0%, #4f46e5 50%, #7c3aed 100%);
+    --bg-main: linear-gradient(135deg, #f0eeff 0%, #ede9fe 50%, #f5f3ff 100%);
+    --bg-soft: rgba(108, 71, 255, 0.06);
+    --card-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(108, 71, 255, 0.12);
+    --shadow-soft: 0 4px 24px rgba(108, 71, 255, 0.10);
+    --shadow-medium: 0 8px 32px rgba(108, 71, 255, 0.18);
+    --shadow-strong: 0 16px 48px rgba(108, 71, 255, 0.22);
+    --shadow-glow: 0 0 24px rgba(108, 71, 255, 0.45);
+    --text-dark: #1e1b4b;
+    --text-medium: #4c4777;
+    --text-light: #9ca3af;
+    --radius-lg: 18px;
+    --radius-md: 12px;
+    --transition: 0.25s ease;
+    --transition-smooth: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+
+    /* Status colors */
+    --status-active-bg: rgba(16, 185, 129, 0.12);
+    --status-active-color: #059669;
+    --status-inactive-bg: rgba(239, 68, 68, 0.10);
+    --status-inactive-color: #dc2626;
+    --status-pending-bg: rgba(245, 158, 11, 0.12);
+    --status-pending-color: #d97706;
+}
+
+/* ========================================
+   BASE
+   ======================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-main);
+    min-height: 100vh;
+    color: var(--text-dark);
+}
+
+/* ========================================
+   PAGE HEADER BANNER
+   ======================================== */
+.page-header {
+    background: var(--gradient-top);
+    padding: 40px 0 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -30%;
+    width: 180%;
+    height: 220%;
+    background: radial-gradient(circle, rgba(255,255,255,0.07) 0%, transparent 60%);
+    animation: headerShine 18s ease-in-out infinite;
+}
+
+@keyframes headerShine {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(10%, 10%); }
+}
+
+.page-header-inner {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.page-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.page-header p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.78);
+}
+
+/* ========================================
+   MAIN CONTAINER
+   ======================================== */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto 60px;
+}
+
+/* ========================================
+   TOP ACTION BAR
+   ======================================== */
+.action-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    background: var(--gradient-primary);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    padding: 11px 22px;
+    border-radius: 50px;
+    background: var(--card-bg);
+    color: var(--text-medium);
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    border: 1.5px solid var(--glass-border);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: #fff;
+    color: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   EMPTY STATE
+   ======================================== */
+.no-hostels {
+    text-align: center;
+    padding: 70px 30px;
+    background: var(--card-bg);
+    backdrop-filter: blur(18px);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-soft);
+}
+
+.no-hostels .empty-icon {
+    font-size: 52px;
+    margin-bottom: 18px;
+    opacity: 0.5;
+}
+
+.no-hostels h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.no-hostels p {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.no-hostels a.btn-primary {
+    display: inline-flex;
+}
+
+/* ========================================
+   HOSTEL CARDS LIST
+   ======================================== */
+.hostel-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ========================================
+   HOSTEL CARD
+   ======================================== */
+.hostel-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: var(--card-bg);
+    backdrop-filter: blur(18px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: 20px;
+    transition: var(--transition-smooth);
+    overflow: hidden;
+}
+
+.hostel-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-strong);
+    border-color: rgba(108, 71, 255, 0.22);
+}
+
+/* Left section: image + info */
+.hostel-card .left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex: 1;
+    min-width: 0;
+}
+
+/* Thumbnail */
+.hostel-card .thumb {
+    width: 100px;
+    height: 80px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    flex-shrink: 0;
+    background: var(--bg-soft);
+    border: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.hostel-card .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition-smooth);
+}
+
+.hostel-card:hover .thumb img {
+    transform: scale(1.08);
+}
+
+/* Meta info */
+.hostel-card .meta {
+    min-width: 0;
+}
+
+.hostel-card .meta h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.hostel-card .meta .details {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-medium);
+}
+
+.hostel-card .meta .location {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.hostel-card .meta .price {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Status badge */
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: 0.3px;
+}
+
+.status-badge.active {
+    background: var(--status-active-bg);
+    color: var(--status-active-color);
+}
+
+.status-badge.inactive,
+.status-badge.closed {
+    background: var(--status-inactive-bg);
+    color: var(--status-inactive-color);
+}
+
+.status-badge.pending {
+    background: var(--status-pending-bg);
+    color: var(--status-pending-color);
+}
+
+/* ========================================
+   ACTION BUTTONS
+   ======================================== */
+.hostel-card .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.hostel-card .actions a {
+    text-decoration: none;
+    padding: 9px 18px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: var(--transition);
+}
+
+/* View */
+.hostel-card .actions a.action-view {
+    background: var(--gradient-primary);
+    color: #fff;
+    box-shadow: var(--shadow-soft);
+}
+
+.hostel-card .actions a.action-view:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Edit */
+.hostel-card .actions a.action-edit {
+    background: var(--card-bg);
+    color: var(--primary);
+    border: 1.5px solid var(--glass-border);
+}
+
+.hostel-card .actions a.action-edit:hover {
+    background: var(--bg-soft);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Delete */
+.hostel-card .actions a.action-delete,
+.hostel-card .actions a.danger {
+    background: rgba(239, 68, 68, 0.08);
+    color: #dc2626;
+    border: 1.5px solid rgba(239, 68, 68, 0.18);
+}
+
+.hostel-card .actions a.action-delete:hover,
+.hostel-card .actions a.danger:hover {
+    background: #dc2626;
+    color: #fff;
+    border-color: #dc2626;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(220, 38, 38, 0.28);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 24px;
+    }
+
+    .hostel-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .hostel-card .left {
+        width: 100%;
+    }
+
+    .hostel-card .thumb {
+        width: 80px;
+        height: 64px;
+    }
+
+    .hostel-card .actions {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .action-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hostel-card .meta .details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+}

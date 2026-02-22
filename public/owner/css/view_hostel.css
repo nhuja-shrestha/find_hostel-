@@ -1,0 +1,155 @@
+/* ===== BODY ===== */
+body {
+    background: #f5f7fb;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+}
+
+.detail-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+}
+
+/* ===== HEADER ===== */
+.detail-header h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.location {
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+/* ===== GALLERY ===== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: 0.3s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* ===== LAYOUT ===== */
+.detail-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.info-card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-weight: 600;
+    margin: 15px 0 8px;
+    font-size: 16px;
+}
+
+.facilities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.badge {
+    background: #eef2ff;
+    padding: 8px 14px;
+    border-radius: 50px;
+    font-size: 14px;
+}
+
+/* ===== PRICE CARD ===== */
+.price-card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 30px;
+}
+
+.price {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.price span {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.3s;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Alerts */
+.alert-success {
+    background: #d1fae5;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.alert-error {
+    background: #fee2e2;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+    .detail-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .price-card {
+        position: relative;
+        top: 0;
+    }
+}

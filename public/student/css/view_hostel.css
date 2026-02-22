@@ -1,0 +1,242 @@
+/* ===============================
+   GLOBAL
+=================================*/
+
+body {
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f8faff, #eef2ff);
+    color: #1e293b;
+}
+
+/* ===============================
+   CONTAINER
+=================================*/
+
+.hostel-container {
+    max-width: 1280px;
+    margin: auto;
+    padding: 50px 30px;
+}
+
+/* ===============================
+   HEADER
+=================================*/
+
+.hostel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.hostel-header h1 {
+    font-size: 38px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.subtitle {
+    color: #64748b;
+    margin-top: 8px;
+    font-size: 15px;
+}
+
+.welcome {
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(12px);
+    padding: 12px 22px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+/* ===============================
+   GRID
+=================================*/
+
+.hostel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 35px;
+}
+
+/* ===============================
+   CARD
+=================================*/
+
+.hostel-card {
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(18px);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 
+        0 10px 40px rgba(0,0,0,0.06),
+        inset 0 1px 0 rgba(255,255,255,0.4);
+    transition: all 0.4s cubic-bezier(.4,0,.2,1);
+    display: flex;
+    flex-direction: column;
+}
+
+.hostel-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 
+        0 20px 60px rgba(0,0,0,0.08),
+        0 0 0 1px rgba(102,126,234,0.15);
+}
+
+/* ===============================
+   IMAGE
+=================================*/
+
+.image-wrapper {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.image-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.4), transparent 60%);
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.hostel-card:hover img {
+    transform: scale(1.08);
+}
+
+/* ===============================
+   PRICE BADGE
+=================================*/
+
+.price-tag {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 7px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(102,126,234,0.4);
+    z-index: 2;
+}
+
+/* Wishlist Icon (visual only) */
+.wishlist {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(6px);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    z-index: 2;
+}
+
+.wishlist:hover {
+    background: #ff4d6d;
+    color: white;
+}
+
+/* ===============================
+   CONTENT
+=================================*/
+
+.card-content {
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.location {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.description {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+/* ===============================
+   BUTTON
+=================================*/
+
+.btn-primary {
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(102,126,234,0.4);
+}
+
+/* ===============================
+   BACK BUTTON
+=================================*/
+
+.back-section {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.btn-secondary {
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    text-decoration: none;
+    color: #374151;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #f1f5f9;
+}
+
+/* ===============================
+   RESPONSIVE
+=================================*/
+
+@media (max-width: 768px) {
+    .hostel-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}

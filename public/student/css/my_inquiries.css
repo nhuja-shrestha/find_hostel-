@@ -1,0 +1,6 @@
+@import url('../../../css/theme.css');
+
+/* Student inquiries */
+.my-inq-list{display:flex;flex-direction:column;gap:14px}
+.my-inq-item{background:#fff;padding:14px;border-radius:10px}
+

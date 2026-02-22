@@ -1,0 +1,9 @@
+@import url('../../css/theme.css');
+
+/* Register page basic layout */
+.register-wrap{max-width:980px;margin:36px auto;display:grid;grid-template-columns:1fr 480px;gap:28px}
+.register-left{padding:22px}
+.register-right{background:#fff;padding:18px;border-radius:12px}
+
+@media (max-width:900px){.register-wrap{grid-template-columns:1fr}}
+

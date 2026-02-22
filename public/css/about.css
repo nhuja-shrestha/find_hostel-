@@ -1,0 +1,356 @@
+/* ========================================
+   ABOUT PAGE - MODERN PURPLE-BLUE THEME
+   Glassmorphism with Premium Design
+   ======================================== */
+@import url('../../css/theme.css');
+
+/* ========================================
+   GLOBAL OVERRIDES
+   ======================================== */
+body {
+    background: var(--bg-main);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-dark);
+}
+
+/* ========================================
+   NAVBAR (GLASS EFFECT) — matches dashboard
+   ======================================== */
+.navbar {
+    backdrop-filter: blur(14px);
+    background: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--text-medium);
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: var(--transition);
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary);
+}
+
+/* Auth Buttons */
+.auth-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.auth-buttons a {
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-login {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+.btn-login:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+.btn-signup {
+    background: var(--gradient-primary);
+    color: #fff;
+    border: none;
+    box-shadow: var(--shadow-soft);
+}
+
+.btn-signup:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* ========================================
+   HERO SECTION — matches dashboard
+   ======================================== */
+.hero {
+    background: var(--gradient-top);
+    text-align: center;
+    padding: 100px 20px 70px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+    animation: heroShine 20s ease-in-out infinite;
+}
+
+@keyframes heroShine {
+    0%, 100% { transform: translate(0, 0); }
+    50%       { transform: translate(15%, 15%); }
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========================================
+   MAIN CONTAINER
+   ======================================== */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* ========================================
+   SHARED CARD BASE — glassmorphism
+   ======================================== */
+.mission-card,
+.how-it-works-card,
+.why-choose-card,
+.team-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(18px);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-soft);
+    padding: 40px;
+    transition: var(--transition-smooth);
+}
+
+.mission-card:hover,
+.how-it-works-card:hover,
+.why-choose-card:hover,
+.team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-strong);
+}
+
+.mission-card h2,
+.how-it-works-card h2,
+.why-choose-card h2,
+.team-card h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 18px;
+}
+
+.mission-card p,
+.team-card p {
+    font-size: 15px;
+    color: var(--text-medium);
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ========================================
+   HOW IT WORKS — 3-column steps grid
+   ======================================== */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+    margin-top: 10px;
+}
+
+.step-item {
+    text-align: center;
+    padding: 28px 20px;
+    border-radius: var(--radius-lg);
+    background: var(--bg-soft);
+    border: 1px solid var(--glass-border);
+    transition: var(--transition-smooth);
+}
+
+.step-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+    background: var(--card-bg);
+}
+
+.step-icon {
+    font-size: 38px;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.step-item h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.step-item p {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ========================================
+   WHY CHOOSE US — feature list
+   ======================================== */
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--text-medium);
+    padding: 16px 20px;
+    border-radius: var(--radius-lg);
+    background: var(--bg-soft);
+    border: 1px solid var(--glass-border);
+    line-height: 1.6;
+    transition: var(--transition-smooth);
+}
+
+.features-list li:hover {
+    transform: translateX(6px);
+    box-shadow: var(--shadow-soft);
+    background: var(--card-bg);
+}
+
+.features-list li strong {
+    color: var(--primary);
+}
+
+/* ========================================
+   FOOTER — matches dashboard
+   ======================================== */
+.footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--gradient-top);
+    color: #fff;
+    font-size: 14px;
+    margin-top: 60px;
+}
+
+.footer p {
+    margin: 4px 0;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .mission-card,
+    .how-it-works-card,
+    .why-choose-card,
+    .team-card {
+        padding: 28px 20px;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features-list li:hover {
+        transform: none;
+    }
+}
